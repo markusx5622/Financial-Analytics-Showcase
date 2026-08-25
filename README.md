@@ -209,9 +209,9 @@ matplotlib>=3.7.0
 
 Profesional enfocado en la intersección entre **analítica avanzada de datos, finanzas corporativas y consultoría estratégica**. Apasionado por resolver problemas complejos de negocio mediante código limpio, modelos rigurosos y herramientas automatizadas que impactan en la cuenta de resultados.
 
-- 💼 **LinkedIn:** [linkedin.com/in/tu-perfil](https://linkedin.com)
-- 🐙 **GitHub:** [github.com/tu-usuario](https://github.com)
-- ✉️ **Email:** [tu-correo@email.com](mailto:tu-correo@email.com)
+- 💼 **LinkedIn:** [linkedin.com/in/tu-perfil](linkedin.com/in/marc-cubero-cantavella-bb04542a7)
+- 🐙 **GitHub:** [github.com/tu-usuario](https://github.com/markusx5622)
+- ✉️ **Email:** [tu-correo@email.com](marc.cubero@gmail.com)
 
 ---
 *Developed with a focus on code maintainability, financial rigor, and business value creation.*
