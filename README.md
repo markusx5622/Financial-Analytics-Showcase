@@ -28,6 +28,7 @@ This repository consolidates three modular **Financial Data Analytics & Quantita
   - [1. M&A Target Screener (Corporate Finance)](#1-ma-target-screener--corporate-finance)
   - [2. Credit Risk Scoring & Underwriting Engine (Risk Advisory)](#2-credit-risk-scoring--underwriting-engine-risk-advisory)
   - [3. Quantitative Trading Backtester & Risk Engine (Asset Management)](#3-quantitative-trading-backtester--risk-engine-asset-management)
+  - [4. Cloud Data Warehouse & Analytics Engineering (Data Engineering)](#4-cloud-data-warehouse--analytics-engineering-data-engineering)
 - [🛠 Tech Stack & Core Competencies](#-tech-stack--core-competencies)
 - [🚀 Quickstart & Installation](#-quickstart--installation)
 - [📫 Contact & Professional Profile](#-contact--professional-profile)
@@ -48,6 +49,10 @@ Financial-Analytics-Showcase/
 │
 ├── 3_Algo_Trading_Backtester/
 │   └── Quant_Trading_Engine.ipynb      # Quantitative Engine (Stochastic Simulation, Golden Cross & Sharpe)
+│
+├── 4_Retail_Banking_dbt/
+│   ├── raw_data/                       # Simulated 50k+ rows of banking transactions & customers
+│   └── retail_bank_analytics/          # dbt project (Staging, Marts, Tests, and Documentation)
 │
 ├── requirements.txt                    # Global environment dependencies
 ├── .gitignore                          # Git ignore rules
@@ -118,6 +123,28 @@ Developing systematic quantitative strategies requires empirical validation agai
 
 ---
 
+### 4. Cloud Data Warehouse & Analytics Engineering | Data Engineering
+
+```yaml
+Domain: Data Engineering, Analytics Engineering & Data Governance
+Tech Stack: SQL, dbt (data build tool), DuckDB, Python
+Deliverable: Automated SQL Pipeline, Dimensional Models & DAG Lineage
+```
+
+#### 🎯 Business Problem
+Financial institutions rely on massive, heterogeneous datasets stored in cloud data warehouses. Before Data Scientists can build predictive models or executives can visualize KPIs, raw data must be cleaned, joined, and audited for data quality. Without a unified **Modern Data Stack**, organizations suffer from metric discrepancies and broken data pipelines.
+
+#### ⚙️ Technical & Financial Solution
+- **Synthetic Data Generation:** Python script simulating a retail banking ecosystem containing **1,000 customers, bank accounts, and over 50,000 randomized financial transactions**.
+- **Local Analytical Data Warehouse:** Integration of **DuckDB** for highly-performant, in-process columnar data ingestion, eliminating cloud-infrastructure overhead while executing ANSI standard SQL.
+- **dbt Analytics Engineering Pipeline:**
+  - **Staging Layer:** View creation for data type casting, renaming, and normalization.
+  - **Marts Layer:** Construction of dimensional models (`dim_customers`) and fact tables (`fct_transactions`) utilizing advanced SQL features like **Window Functions** to compute chronological running balances.
+  - **Business Layer:** Cross-joining data across the warehouse to create a `customer_360_view`, aggregating portfolio balances and flagging *High Net Worth* vs *Overdrawn* clients using complex Common Table Expressions (CTEs) and `arg_max` aggregations.
+- **Data Quality & Governance:** Implementation of YAML-based automated testing (Unique, Not Null constraints) and generation of the visual data lineage DAG (Directed Acyclic Graph) for auditing purposes.
+
+---
+
 ## 🛠 Tech Stack & Core Competencies
 
 | Functional Area | Technologies & Libraries | Practical Business Application |
@@ -127,6 +154,7 @@ Developing systematic quantitative strategies requires empirical validation agai
 | **Automated Reporting** | `openpyxl` | Headless, programmatic creation of audit-ready Excel models for executive stakeholders. |
 | **Quantitative Analytics** | `matplotlib`, `seaborn` | Visual diagnostics: equity curves, ROC curves, drawdowns, and distribution charts. |
 | **Financial Engineering** | Valuation & Risk Frameworks | Enterprise Value, EV/EBITDA, Net Debt, Sharpe Ratio, Max Drawdown, Geometric Brownian Motion. |
+| **Data & Analytics Engineering** | `SQL`, `dbt`, `DuckDB` | Staging/Marts modeling, Window Functions, Data Quality Testing, DAG Lineage mapping. |
 
 ---
 
@@ -172,6 +200,7 @@ jupyter lab
 - 📊 **M&A Target Screener:** `1_MandA_Target_Screener/MA_Screener_Engine.ipynb`
 - 💳 **Credit Risk Model:** `2_Credit_Risk_Model/Credit_Scoring_ML.ipynb`
 - 📈 **Algo Trading Backtester:** `3_Algo_Trading_Backtester/Quant_Trading_Engine.ipynb`
+- 🗄️ **Data Engineering (dbt):** `cd 4_Retail_Banking_dbt/retail_bank_analytics && dbt run`
 
 ---
 

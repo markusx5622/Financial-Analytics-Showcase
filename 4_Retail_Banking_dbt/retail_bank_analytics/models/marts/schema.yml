@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: customer_360_view
+    description: "Visión integral del cliente cruzando demografía con volumen transaccional y balances."
+    columns:
+      - name: customer_id
+        description: "Clave primaria del cliente."
+        tests:
+          - unique
+          - not_null
+      - name: active_accounts
+        description: "Número total de cuentas asociadas al cliente."
+      - name: total_portfolio_balance_eur
+        description: "Suma de los saldos actuales en todas las cuentas."
+      - name: financial_health_status
+        description: "Lógica de negocio: 'High Net Worth', 'Standard' o 'Overdrawn (Risk)'."
+        tests:
+          - accepted_values:
+              values: ['High Net Worth', 'Standard', 'Overdrawn (Risk)']
+
+  - name: fct_transactions
+    description: "Tabla de hechos con balances móviles calculados mediante Window Functions."
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null

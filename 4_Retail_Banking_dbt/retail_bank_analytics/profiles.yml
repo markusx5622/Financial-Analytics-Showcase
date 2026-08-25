@@ -1,0 +1,7 @@
+retail_bank_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'banco_retail.duckdb'
+      threads: 4

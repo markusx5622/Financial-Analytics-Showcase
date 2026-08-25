@@ -1,0 +1,2026 @@
+[0m15:40:30.069536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652AC96E40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000265284D4E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652D4FF890>]}
+
+
+============================== 15:40:30.074995 | b6a4833b-9da0-4473-890f-215108628146 ==============================
+[0m15:40:30.074995 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:40:30.075917 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'False', 'version_check': 'True', 'use_colors': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'partial_parse': 'True', 'printer_width': '80', 'static_parser': 'True', 'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'cache_selected_only': 'False'}
+[0m15:40:30.725055 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652D473950>]}
+[0m15:40:30.784343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652B715040>]}
+[0m15:40:30.787675 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m15:40:31.264366 [debug] [MainThread]: checksum: 86b2f7d02667648145cacfd5a589c304891b79a74c7321d75c7ee0abdb0a02dd, vars: {}, profile: retail_bank_analytics, target: dev, version: 1.12.3
+[0m15:40:31.265325 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m15:40:31.266245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652D5E3550>]}
+[0m15:40:32.315446 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.retail_bank_analytics.marts
+[0m15:40:32.318823 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652EAA0C80>]}
+[0m15:40:32.387854 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:40:32.394096 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:40:32.421483 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:40:32.433166 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652EF34910>]}
+[0m15:40:32.433595 [info ] [MainThread]: Found 3 models, 500 macros
+[0m15:40:32.434062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652EB1BC70>]}
+[0m15:40:32.435578 [info ] [MainThread]: 
+[0m15:40:32.436206 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:40:32.436563 [info ] [MainThread]: 
+[0m15:40:32.437041 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:40:32.440956 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail'
+[0m15:40:32.579856 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail"
+[0m15:40:32.580229 [debug] [ThreadPool]: On list_banco_retail: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"banco_retail"'
+    
+  
+  
+[0m15:40:32.580494 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:40:32.594641 [debug] [ThreadPool]: SQL status: OK in 0.014 seconds
+[0m15:40:32.595777 [debug] [ThreadPool]: On list_banco_retail: Close
+[0m15:40:32.596506 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_banco_retail, now create_banco_retail_main)
+[0m15:40:32.597228 [debug] [ThreadPool]: Creating schema "database: "banco_retail"
+schema: "main"
+"
+[0m15:40:32.603170 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:40:32.603489 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='banco_retail'
+        and type != 'duckdb'
+    
+  
+[0m15:40:32.603762 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:40:32.604589 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:40:32.605590 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:40:32.605879 [debug] [ThreadPool]: On create_banco_retail_main: BEGIN
+[0m15:40:32.606320 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:40:32.606585 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:40:32.606824 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+    
+        create schema if not exists "banco_retail"."main"
+    
+[0m15:40:32.607288 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:40:32.607928 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:40:32.608186 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:40:32.608423 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:40:32.608783 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:40:32.609036 [debug] [ThreadPool]: On create_banco_retail_main: Close
+[0m15:40:32.610592 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail_main'
+[0m15:40:32.614107 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:40:32.614374 [debug] [ThreadPool]: On list_banco_retail_main: BEGIN
+[0m15:40:32.614696 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:40:32.615097 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:40:32.615347 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:40:32.615565 [debug] [ThreadPool]: On list_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail_main"} */
+select
+      'banco_retail' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'banco_retail'
+  
+[0m15:40:32.618121 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m15:40:32.618899 [debug] [ThreadPool]: On list_banco_retail_main: ROLLBACK
+[0m15:40:32.619265 [debug] [ThreadPool]: On list_banco_retail_main: Close
+[0m15:40:32.619883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652EE2FA10>]}
+[0m15:40:32.620255 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:40:32.620480 [debug] [MainThread]: On master: BEGIN
+[0m15:40:32.620675 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:40:32.621040 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:40:32.621296 [debug] [MainThread]: On master: COMMIT
+[0m15:40:32.621507 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:40:32.621695 [debug] [MainThread]: On master: COMMIT
+[0m15:40:32.622013 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:40:32.622249 [debug] [MainThread]: On master: Close
+[0m15:40:32.626647 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.stg_customers
+[0m15:40:32.627936 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.stg_transactions
+[0m15:40:32.627574 [info ] [Thread-2 (]: 2 of 3 START sql view model main.stg_customers ................................. [RUN]
+[0m15:40:32.627083 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.stg_accounts
+[0m15:40:32.628967 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_customers'
+[0m15:40:32.629867 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.stg_customers
+[0m15:40:32.634571 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.628480 [info ] [Thread-3 (]: 3 of 3 START sql view model main.stg_transactions .............................. [RUN]
+[0m15:40:32.635248 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_transactions'
+[0m15:40:32.635586 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.stg_transactions
+[0m15:40:32.636418 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.629530 [info ] [Thread-1 (]: 1 of 3 START sql view model main.stg_accounts .................................. [RUN]
+[0m15:40:32.636952 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_accounts'
+[0m15:40:32.637272 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.stg_accounts
+[0m15:40:32.637982 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.640017 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.stg_accounts
+[0m15:40:32.640393 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.stg_transactions
+[0m15:40:32.640785 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.stg_customers
+[0m15:40:32.671712 [debug] [Thread-3 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.673265 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.675404 [debug] [Thread-2 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.678439 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.679239 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: BEGIN
+[0m15:40:32.679580 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:40:32.678872 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.680567 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: BEGIN
+[0m15:40:32.680857 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:40:32.680235 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.681265 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: BEGIN
+[0m15:40:32.681951 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:40:32.681607 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:40:32.682674 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.682964 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+  
+  create view "banco_retail"."main"."stg_customers__dbt_tmp" as (
+    with raw_customers as (
+    select * from read_csv_auto('../raw_data/raw_customers.csv')
+)
+
+select
+    customer_id,
+    age,
+    segment as customer_segment,
+    city,
+    join_date::DATE as join_date
+from raw_customers
+  );
+
+[0m15:40:32.683392 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:40:32.682358 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:40:32.684048 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.684367 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+  
+  create view "banco_retail"."main"."stg_accounts__dbt_tmp" as (
+    with raw_accounts as (
+    select * from read_csv_auto('../raw_data/raw_accounts.csv')
+)
+
+select
+    account_id,
+    customer_id,
+    account_type,
+    status as account_status,
+    open_date::DATE as open_date
+from raw_accounts
+  );
+
+[0m15:40:32.683732 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.684786 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+  
+  create view "banco_retail"."main"."stg_transactions__dbt_tmp" as (
+    with raw_transactions as (
+    select * from read_csv_auto('../raw_data/raw_transactions.csv')
+)
+
+select
+    transaction_id,
+    account_id,
+    transaction_date::TIMESTAMP as transaction_timestamp,
+    transaction_type,
+    cast(amount as DECIMAL(10,2)) as amount_eur
+from raw_transactions
+  );
+
+[0m15:40:32.744846 [debug] [Thread-3 (]: SQL status: OK in 0.059 seconds
+[0m15:40:32.751130 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.751604 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+alter view "banco_retail"."main"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m15:40:32.752105 [debug] [Thread-1 (]: SQL status: OK in 0.067 seconds
+[0m15:40:32.753830 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.754159 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+alter view "banco_retail"."main"."stg_accounts__dbt_tmp" rename to "stg_accounts"
+[0m15:40:32.754565 [debug] [Thread-2 (]: SQL status: OK in 0.071 seconds
+[0m15:40:32.756398 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.756719 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+alter view "banco_retail"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:40:32.757099 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m15:40:32.766714 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:40:32.767174 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.767559 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:40:32.768079 [debug] [Thread-1 (]: SQL status: OK in 0.013 seconds
+[0m15:40:32.769487 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:40:32.770472 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.770908 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:40:32.769942 [debug] [Thread-2 (]: SQL status: OK in 0.013 seconds
+[0m15:40:32.772359 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:40:32.772781 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.773123 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:40:32.773513 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:40:32.778449 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:40:32.773956 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m15:40:32.780367 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:40:32.779180 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m15:40:32.781786 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:40:32.778828 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+      drop view if exists "banco_retail"."main"."stg_accounts__dbt_backup" cascade
+    
+[0m15:40:32.782088 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+      drop view if exists "banco_retail"."main"."stg_customers__dbt_backup" cascade
+    
+[0m15:40:32.780683 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+      drop view if exists "banco_retail"."main"."stg_transactions__dbt_backup" cascade
+    
+[0m15:40:32.782710 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:40:32.784421 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: Close
+[0m15:40:32.784767 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:40:32.786953 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: Close
+[0m15:40:32.785171 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m15:40:32.788243 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: Close
+[0m15:40:32.789168 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652F31B1D0>]}
+[0m15:40:32.790353 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652F27ABA0>]}
+[0m15:40:32.790062 [info ] [Thread-1 (]: 1 of 3 OK created sql view model main.stg_accounts ............................. [[32mOK[0m in 0.15s]
+[0m15:40:32.789520 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b6a4833b-9da0-4473-890f-215108628146', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652F20A5D0>]}
+[0m15:40:32.790948 [info ] [Thread-3 (]: 3 of 3 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.15s]
+[0m15:40:32.792486 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.stg_transactions
+[0m15:40:32.791901 [info ] [Thread-2 (]: 2 of 3 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.16s]
+[0m15:40:32.791394 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.stg_accounts
+[0m15:40:32.793193 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.stg_customers
+[0m15:40:32.794554 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:40:32.794816 [debug] [MainThread]: On master: BEGIN
+[0m15:40:32.795031 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:40:32.795535 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:40:32.795786 [debug] [MainThread]: On master: COMMIT
+[0m15:40:32.795991 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:40:32.796183 [debug] [MainThread]: On master: COMMIT
+[0m15:40:32.796563 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:40:32.796826 [debug] [MainThread]: On master: Close
+[0m15:40:32.797126 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:40:32.797322 [debug] [MainThread]: Connection 'create_banco_retail_main' was properly closed.
+[0m15:40:32.797497 [debug] [MainThread]: Connection 'list_banco_retail_main' was properly closed.
+[0m15:40:32.797672 [debug] [MainThread]: Connection 'model.retail_bank_analytics.stg_customers' was properly closed.
+[0m15:40:32.797841 [debug] [MainThread]: Connection 'model.retail_bank_analytics.stg_transactions' was properly closed.
+[0m15:40:32.798005 [debug] [MainThread]: Connection 'model.retail_bank_analytics.stg_accounts' was properly closed.
+[0m15:40:32.798247 [info ] [MainThread]: 
+[0m15:40:32.798766 [info ] [MainThread]: Finished running 3 view models in 0 hours 0 minutes and 0.36 seconds (0.36s).
+[0m15:40:32.799659 [debug] [MainThread]: Command end result
+[0m15:40:32.830832 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:40:32.834538 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:40:32.837893 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:40:32.844441 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\run_results.json
+[0m15:40:32.844775 [info ] [MainThread]: 
+[0m15:40:32.845431 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:40:32.846058 [info ] [MainThread]: 
+[0m15:40:32.846517 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+[0m15:40:32.847648 [debug] [MainThread]: Command `dbt run` succeeded at 15:40:32.847546 after 2.93 seconds
+[0m15:40:32.847956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652D526F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026525C69C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002652F17B830>]}
+[0m15:40:32.848241 [debug] [MainThread]: Flushing usage events
+[0m15:40:33.062335 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:43:16.146871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F5682E40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F2EC4E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F7EEF890>]}
+
+
+============================== 15:43:16.152082 | 782793e3-df3a-4b80-8e8f-aa6a16246cb3 ==============================
+[0m15:43:16.152082 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:43:16.152829 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'False', 'version_check': 'True', 'use_colors': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'static_parser': 'True'}
+[0m15:43:16.474261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F7E63950>]}
+[0m15:43:16.529443 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F6105040>]}
+[0m15:43:16.533092 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m15:43:16.913504 [debug] [MainThread]: checksum: 86b2f7d02667648145cacfd5a589c304891b79a74c7321d75c7ee0abdb0a02dd, vars: {}, profile: retail_bank_analytics, target: dev, version: 1.12.3
+[0m15:43:17.054935 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 3 files added, 0 files changed.
+[0m15:43:17.055401 [debug] [MainThread]: Partial parsing: added file: retail_bank_analytics://models\marts\customer_360_view.sql
+[0m15:43:17.055695 [debug] [MainThread]: Partial parsing: added file: retail_bank_analytics://models\marts\dim_customers.sql
+[0m15:43:17.055925 [debug] [MainThread]: Partial parsing: added file: retail_bank_analytics://models\marts\fct_transactions.sql
+[0m15:43:17.302418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9549050>]}
+[0m15:43:17.366929 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:43:17.370493 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:43:17.399207 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:43:17.410383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F998D9A0>]}
+[0m15:43:17.410880 [info ] [MainThread]: Found 6 models, 500 macros
+[0m15:43:17.411366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F99AD7F0>]}
+[0m15:43:17.412954 [info ] [MainThread]: 
+[0m15:43:17.413351 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:43:17.413736 [info ] [MainThread]: 
+[0m15:43:17.414301 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:43:17.419057 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail'
+[0m15:43:17.511341 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail"
+[0m15:43:17.511736 [debug] [ThreadPool]: On list_banco_retail: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"banco_retail"'
+    
+  
+  
+[0m15:43:17.511980 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:43:17.524233 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m15:43:17.525207 [debug] [ThreadPool]: On list_banco_retail: Close
+[0m15:43:17.525775 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_banco_retail, now create_banco_retail_main)
+[0m15:43:17.526415 [debug] [ThreadPool]: Creating schema "database: "banco_retail"
+schema: "main"
+"
+[0m15:43:17.532625 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:43:17.532957 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='banco_retail'
+        and type != 'duckdb'
+    
+  
+[0m15:43:17.533231 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:43:17.534069 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:43:17.535078 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:43:17.535376 [debug] [ThreadPool]: On create_banco_retail_main: BEGIN
+[0m15:43:17.535843 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:43:17.536159 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:43:17.536436 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+    
+        create schema if not exists "banco_retail"."main"
+    
+[0m15:43:17.536891 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:43:17.537750 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:43:17.538044 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:43:17.538302 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:43:17.538729 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:43:17.539030 [debug] [ThreadPool]: On create_banco_retail_main: Close
+[0m15:43:17.540658 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail_main'
+[0m15:43:17.545923 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:43:17.546333 [debug] [ThreadPool]: On list_banco_retail_main: BEGIN
+[0m15:43:17.551909 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:43:17.552921 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:43:17.553404 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:43:17.553663 [debug] [ThreadPool]: On list_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail_main"} */
+select
+      'banco_retail' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'banco_retail'
+  
+[0m15:43:17.556170 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m15:43:17.557161 [debug] [ThreadPool]: On list_banco_retail_main: ROLLBACK
+[0m15:43:17.557614 [debug] [ThreadPool]: On list_banco_retail_main: Close
+[0m15:43:17.558989 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9C09160>]}
+[0m15:43:17.559380 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:43:17.559627 [debug] [MainThread]: On master: BEGIN
+[0m15:43:17.559876 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:43:17.560270 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:43:17.560516 [debug] [MainThread]: On master: COMMIT
+[0m15:43:17.560721 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:43:17.560908 [debug] [MainThread]: On master: COMMIT
+[0m15:43:17.561227 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:43:17.561486 [debug] [MainThread]: On master: Close
+[0m15:43:17.566757 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.stg_customers
+[0m15:43:17.567565 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.stg_transactions
+[0m15:43:17.567231 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_customers ................................. [RUN]
+[0m15:43:17.569030 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_customers'
+[0m15:43:17.568048 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.stg_accounts
+[0m15:43:17.569358 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.stg_customers
+[0m15:43:17.573835 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.568524 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_transactions .............................. [RUN]
+[0m15:43:17.574980 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_transactions'
+[0m15:43:17.575302 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.stg_transactions
+[0m15:43:17.569918 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_accounts .................................. [RUN]
+[0m15:43:17.576490 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_accounts'
+[0m15:43:17.576798 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.stg_accounts
+[0m15:43:17.577566 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.576050 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.578125 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.stg_customers
+[0m15:43:17.605877 [debug] [Thread-2 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.606545 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.stg_accounts
+[0m15:43:17.608748 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.609280 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.stg_transactions
+[0m15:43:17.612035 [debug] [Thread-3 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.609704 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.612449 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: BEGIN
+[0m15:43:17.612774 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:43:17.613538 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.613891 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: BEGIN
+[0m15:43:17.614188 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:43:17.614644 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:43:17.615769 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.616087 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+  
+  create view "banco_retail"."main"."stg_customers__dbt_tmp" as (
+    with raw_customers as (
+    select * from read_csv_auto('../raw_data/raw_customers.csv')
+)
+
+select
+    customer_id,
+    age,
+    segment as customer_segment,
+    city,
+    join_date::DATE as join_date
+from raw_customers
+  );
+
+[0m15:43:17.615023 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.616523 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: BEGIN
+[0m15:43:17.615418 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:43:17.617210 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.617534 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+  
+  create view "banco_retail"."main"."stg_accounts__dbt_tmp" as (
+    with raw_accounts as (
+    select * from read_csv_auto('../raw_data/raw_accounts.csv')
+)
+
+select
+    account_id,
+    customer_id,
+    account_type,
+    status as account_status,
+    open_date::DATE as open_date
+from raw_accounts
+  );
+
+[0m15:43:17.616815 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:43:17.618176 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:43:17.618487 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.618774 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+  
+  create view "banco_retail"."main"."stg_transactions__dbt_tmp" as (
+    with raw_transactions as (
+    select * from read_csv_auto('../raw_data/raw_transactions.csv')
+)
+
+select
+    transaction_id,
+    account_id,
+    transaction_date::TIMESTAMP as transaction_timestamp,
+    transaction_type,
+    cast(amount as DECIMAL(10,2)) as amount_eur
+from raw_transactions
+  );
+
+[0m15:43:17.667525 [debug] [Thread-3 (]: SQL status: OK in 0.048 seconds
+[0m15:43:17.672594 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.672967 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+alter view "banco_retail"."main"."stg_transactions" rename to "stg_transactions__dbt_backup"
+[0m15:43:17.673495 [debug] [Thread-2 (]: SQL status: OK in 0.057 seconds
+[0m15:43:17.675182 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.675515 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+alter view "banco_retail"."main"."stg_customers" rename to "stg_customers__dbt_backup"
+[0m15:43:17.675899 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m15:43:17.677948 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.678291 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+alter view "banco_retail"."main"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m15:43:17.678696 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:43:17.680302 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.680669 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+alter view "banco_retail"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:43:17.681079 [debug] [Thread-1 (]: SQL status: OK in 0.063 seconds
+[0m15:43:17.682758 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.683080 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+alter view "banco_retail"."main"."stg_accounts" rename to "stg_accounts__dbt_backup"
+[0m15:43:17.683529 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m15:43:17.694773 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:43:17.695177 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.695524 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:43:17.695986 [debug] [Thread-2 (]: SQL status: OK in 0.015 seconds
+[0m15:43:17.697761 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:43:17.698185 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.698551 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:43:17.698994 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m15:43:17.700702 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.701026 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+alter view "banco_retail"."main"."stg_accounts__dbt_tmp" rename to "stg_accounts"
+[0m15:43:17.701347 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m15:43:17.705066 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:43:17.705379 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+      drop view if exists "banco_retail"."main"."stg_transactions__dbt_backup" cascade
+    
+[0m15:43:17.705885 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m15:43:17.707172 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:43:17.707505 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.707802 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:43:17.708161 [debug] [Thread-2 (]: SQL status: OK in 0.009 seconds
+[0m15:43:17.709436 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:43:17.709733 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+      drop view if exists "banco_retail"."main"."stg_customers__dbt_backup" cascade
+    
+[0m15:43:17.710107 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:43:17.711236 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:43:17.711530 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+      drop view if exists "banco_retail"."main"."stg_accounts__dbt_backup" cascade
+    
+[0m15:43:17.711930 [debug] [Thread-3 (]: SQL status: OK in 0.006 seconds
+[0m15:43:17.713849 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: Close
+[0m15:43:17.715149 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m15:43:17.716534 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: Close
+[0m15:43:17.715544 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m15:43:17.717885 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: Close
+[0m15:43:17.718477 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F99768D0>]}
+[0m15:43:17.719288 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9A07D80>]}
+[0m15:43:17.719005 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.14s]
+[0m15:43:17.720785 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.stg_transactions
+[0m15:43:17.719705 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9D3D770>]}
+[0m15:43:17.720266 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.15s]
+[0m15:43:17.722616 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.stg_customers
+[0m15:43:17.722110 [debug] [Thread-4 (]: Began running node model.retail_bank_analytics.fct_transactions
+[0m15:43:17.721550 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_accounts ............................. [[32mOK[0m in 0.14s]
+[0m15:43:17.724175 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.stg_accounts
+[0m15:43:17.723711 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.dim_customers
+[0m15:43:17.723241 [info ] [Thread-4 (]: 4 of 6 START sql table model main.fct_transactions ............................. [RUN]
+[0m15:43:17.725085 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.fct_transactions'
+[0m15:43:17.725396 [debug] [Thread-4 (]: Began compiling node model.retail_bank_analytics.fct_transactions
+[0m15:43:17.726975 [debug] [Thread-4 (]: Writing injected SQL for node "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.724670 [info ] [Thread-3 (]: 5 of 6 START sql table model main.dim_customers ................................ [RUN]
+[0m15:43:17.727477 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_transactions, now model.retail_bank_analytics.dim_customers)
+[0m15:43:17.727772 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.dim_customers
+[0m15:43:17.729262 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.729841 [debug] [Thread-4 (]: Began executing node model.retail_bank_analytics.fct_transactions
+[0m15:43:17.765585 [debug] [Thread-4 (]: Writing runtime sql for node "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.766338 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.dim_customers
+[0m15:43:17.769029 [debug] [Thread-3 (]: Writing runtime sql for node "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.770641 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.771598 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: BEGIN
+[0m15:43:17.771933 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:43:17.771101 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.772426 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: BEGIN
+[0m15:43:17.772748 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:43:17.773185 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m15:43:17.773509 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.773819 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."fct_transactions__dbt_tmp"
+  
+    
+    as (
+      with stg_transactions as (
+    select * from "banco_retail"."main"."stg_transactions"
+),
+
+calc_running_balance as (
+    select
+        transaction_id,
+        account_id,
+        transaction_timestamp,
+        transaction_type,
+        amount_eur,
+        -- Window Function: Calcula el balance acumulado de la cuenta ordenado por fecha (Running Total)
+        sum(amount_eur) over (
+            partition by account_id 
+            order by transaction_timestamp 
+            rows between unbounded preceding and current row
+        ) as running_balance_eur
+    from stg_transactions
+)
+
+select * from calc_running_balance
+    );
+    
+  
+[0m15:43:17.774360 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m15:43:17.774780 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.775079 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."dim_customers__dbt_tmp"
+  
+    
+    as (
+      with stg_customers as (
+    select * from "banco_retail"."main"."stg_customers"
+)
+
+select
+    customer_id,
+    age,
+    case
+        when age < 25 then 'Gen Z'
+        when age between 25 and 40 then 'Millennial'
+        when age between 41 and 56 then 'Gen X'
+        else 'Boomer'
+    end as generational_cohort,
+    customer_segment,
+    city,
+    join_date,
+    date_diff('year', join_date, current_date) as customer_tenure_years
+from stg_customers
+    );
+    
+  
+[0m15:43:17.827545 [debug] [Thread-3 (]: SQL status: OK in 0.052 seconds
+[0m15:43:17.829655 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.830033 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+alter table "banco_retail"."main"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m15:43:17.830656 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m15:43:17.834991 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: COMMIT
+[0m15:43:17.835342 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.835652 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: COMMIT
+[0m15:43:17.838196 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m15:43:17.839551 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:43:17.839888 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+
+      drop table if exists "banco_retail"."main"."dim_customers__dbt_backup" cascade
+    
+[0m15:43:17.840415 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m15:43:17.841449 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: Close
+[0m15:43:17.841918 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9C766D0>]}
+[0m15:43:17.842450 [info ] [Thread-3 (]: 5 of 6 OK created sql table model main.dim_customers ........................... [[32mOK[0m in 0.11s]
+[0m15:43:17.843195 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.dim_customers
+[0m15:43:17.865464 [debug] [Thread-4 (]: SQL status: OK in 0.091 seconds
+[0m15:43:17.867895 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.868232 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+alter table "banco_retail"."main"."fct_transactions__dbt_tmp" rename to "fct_transactions"
+[0m15:43:17.868989 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m15:43:17.870380 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: COMMIT
+[0m15:43:17.870700 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.870966 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: COMMIT
+[0m15:43:17.879712 [debug] [Thread-4 (]: SQL status: OK in 0.008 seconds
+[0m15:43:17.880985 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:43:17.881267 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+
+      drop table if exists "banco_retail"."main"."fct_transactions__dbt_backup" cascade
+    
+[0m15:43:17.881749 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m15:43:17.882692 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: Close
+[0m15:43:17.883095 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9A008A0>]}
+[0m15:43:17.883562 [info ] [Thread-4 (]: 4 of 6 OK created sql table model main.fct_transactions ........................ [[32mOK[0m in 0.16s]
+[0m15:43:17.884309 [debug] [Thread-4 (]: Finished running node model.retail_bank_analytics.fct_transactions
+[0m15:43:17.885052 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.customer_360_view
+[0m15:43:17.885466 [info ] [Thread-2 (]: 6 of 6 START sql table model main.customer_360_view ............................ [RUN]
+[0m15:43:17.886169 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_customers, now model.retail_bank_analytics.customer_360_view)
+[0m15:43:17.886500 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.customer_360_view
+[0m15:43:17.888438 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.customer_360_view"
+[0m15:43:17.889555 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.customer_360_view
+[0m15:43:17.891670 [debug] [Thread-2 (]: Writing runtime sql for node "model.retail_bank_analytics.customer_360_view"
+[0m15:43:17.892892 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:43:17.893214 [debug] [Thread-2 (]: On model.retail_bank_analytics.customer_360_view: BEGIN
+[0m15:43:17.893471 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m15:43:17.894016 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m15:43:17.894298 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:43:17.894609 [debug] [Thread-2 (]: On model.retail_bank_analytics.customer_360_view: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.customer_360_view"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."customer_360_view__dbt_tmp"
+  
+    
+    as (
+      with dim_customers as (
+    select * from "banco_retail"."main"."dim_customers"
+),
+
+stg_accounts as (
+    select * from "banco_retail"."main"."stg_accounts"
+),
+
+fct_transactions as (
+    select * from "banco_retail"."main"."fct_transactions"
+),
+
+-- CTE 1: Agregamos a nivel de cuenta (Último balance y volumen de transacciones)
+account_metrics as (
+    select
+        account_id,
+        count(transaction_id) as total_transactions,
+        sum(case when amount_eur < 0 then amount_eur else 0 end) as total_money_out,
+        sum(case when amount_eur > 0 then amount_eur else 0 end) as total_money_in,
+        -- Window function trick para coger el último balance
+        last_value(running_balance_eur) over (partition by account_id order by transaction_timestamp rows between unbounded preceding and unbounded following) as current_balance
+    from fct_transactions
+),
+
+-- Evitar duplicados del Window Function anterior cogiendo un distinct
+account_metrics_dedup as (
+    select distinct * from account_metrics
+),
+
+-- CTE 2: Agregamos a nivel de cliente (Cruzando cuentas)
+customer_metrics as (
+    select
+        a.customer_id,
+        count(a.account_id) as total_accounts,
+        sum(am.current_balance) as total_portfolio_balance,
+        sum(am.total_transactions) as total_transaction_volume
+    from stg_accounts a
+    left join account_metrics_dedup am on a.account_id = am.account_id
+    group by a.customer_id
+)
+
+-- FINAL JOIN: Cruzamos la demografía con las métricas financieras
+select
+    c.customer_id,
+    c.generational_cohort,
+    c.customer_segment,
+    c.city,
+    c.customer_tenure_years,
+    coalesce(cm.total_accounts, 0) as active_accounts,
+    coalesce(cm.total_portfolio_balance, 0) as total_portfolio_balance_eur,
+    coalesce(cm.total_transaction_volume, 0) as total_transaction_volume,
+    -- Simple Business Logic para detectar cuentas de alto valor
+    case 
+        when cm.total_portfolio_balance > 50000 then 'High Net Worth'
+        when cm.total_portfolio_balance < 0 then 'Overdrawn (Risk)'
+        else 'Standard'
+    end as financial_health_status
+from dim_customers c
+left join customer_metrics cm on c.customer_id = cm.customer_id
+    );
+    
+  
+[0m15:43:17.949276 [debug] [Thread-2 (]: DuckDB adapter: duckdb error: Binder Error: column "account_id" must appear in the GROUP BY clause or must be part of an aggregate function.
+Either add it to the GROUP BY list, or use "ANY_VALUE(account_id)" if the exact value of "account_id" is not important.
+
+LINE 25:         account_id,
+                 ^
+[0m15:43:17.949992 [debug] [Thread-2 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.customer_360_view"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."customer_360_view__dbt_tmp"
+  
+    
+    as (
+      with dim_customers as (
+    select * from "banco_retail"."main"."dim_customers"
+),
+
+stg_accounts as (
+    select * from "banco_retail"."main"."stg_accounts"
+),
+
+fct_transactions as (
+    select * from "banco_retail"."main"."fct_transactions"
+),
+
+-- CTE 1: Agregamos a nivel de cuenta (Último balance y volumen de transacciones)
+account_metrics as (
+    select
+        account_id,
+        count(transaction_id) as total_transactions,
+        sum(case when amount_eur < 0 then amount_eur else 0 end) as total_money_out,
+        sum(case when amount_eur > 0 then amount_eur else 0 end) as total_money_in,
+        -- Window function trick para coger el último balance
+        last_value(running_balance_eur) over (partition by account_id order by transaction_timestamp rows between unbounded preceding and unbounded following) as current_balance
+    from fct_transactions
+),
+
+-- Evitar duplicados del Window Function anterior cogiendo un distinct
+account_metrics_dedup as (
+    select distinct * from account_metrics
+),
+
+-- CTE 2: Agregamos a nivel de cliente (Cruzando cuentas)
+customer_metrics as (
+    select
+        a.customer_id,
+        count(a.account_id) as total_accounts,
+        sum(am.current_balance) as total_portfolio_balance,
+        sum(am.total_transactions) as total_transaction_volume
+    from stg_accounts a
+    left join account_metrics_dedup am on a.account_id = am.account_id
+    group by a.customer_id
+)
+
+-- FINAL JOIN: Cruzamos la demografía con las métricas financieras
+select
+    c.customer_id,
+    c.generational_cohort,
+    c.customer_segment,
+    c.city,
+    c.customer_tenure_years,
+    coalesce(cm.total_accounts, 0) as active_accounts,
+    coalesce(cm.total_portfolio_balance, 0) as total_portfolio_balance_eur,
+    coalesce(cm.total_transaction_volume, 0) as total_transaction_volume,
+    -- Simple Business Logic para detectar cuentas de alto valor
+    case 
+        when cm.total_portfolio_balance > 50000 then 'High Net Worth'
+        when cm.total_portfolio_balance < 0 then 'Overdrawn (Risk)'
+        else 'Standard'
+    end as financial_health_status
+from dim_customers c
+left join customer_metrics cm on c.customer_id = cm.customer_id
+    );
+    
+  
+[0m15:43:17.950465 [debug] [Thread-2 (]: DuckDB adapter: Rolling back transaction.
+[0m15:43:17.950784 [debug] [Thread-2 (]: On model.retail_bank_analytics.customer_360_view: ROLLBACK
+[0m15:43:17.951464 [debug] [Thread-2 (]: On model.retail_bank_analytics.customer_360_view: Close
+[0m15:43:18.101024 [debug] [Thread-2 (]: Runtime Error in model customer_360_view (models\marts\customer_360_view.sql)
+  Binder Error: column "account_id" must appear in the GROUP BY clause or must be part of an aggregate function.
+  Either add it to the GROUP BY list, or use "ANY_VALUE(account_id)" if the exact value of "account_id" is not important.
+  
+  LINE 25:         account_id,
+                   ^
+[0m15:43:18.101497 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '782793e3-df3a-4b80-8e8f-aa6a16246cb3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9E12F30>]}
+[0m15:43:18.102134 [error] [Thread-2 (]: 6 of 6 ERROR creating sql table model main.customer_360_view ................... [[31mERROR[0m in 0.22s]
+[0m15:43:18.102960 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.customer_360_view
+[0m15:43:18.103493 [debug] [Thread-7 (]: Marking all children of 'model.retail_bank_analytics.customer_360_view' to be skipped because of status 'error'.  Reason: Runtime Error in model customer_360_view (models\marts\customer_360_view.sql)
+  Binder Error: column "account_id" must appear in the GROUP BY clause or must be part of an aggregate function.
+  Either add it to the GROUP BY list, or use "ANY_VALUE(account_id)" if the exact value of "account_id" is not important.
+  
+  LINE 25:         account_id,
+                   ^.
+[0m15:43:18.105586 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:43:18.105863 [debug] [MainThread]: On master: BEGIN
+[0m15:43:18.106092 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:43:18.106629 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m15:43:18.106868 [debug] [MainThread]: On master: COMMIT
+[0m15:43:18.107071 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:43:18.107278 [debug] [MainThread]: On master: COMMIT
+[0m15:43:18.107647 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:43:18.107896 [debug] [MainThread]: On master: Close
+[0m15:43:18.108214 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:43:18.108434 [debug] [MainThread]: Connection 'create_banco_retail_main' was properly closed.
+[0m15:43:18.108621 [debug] [MainThread]: Connection 'list_banco_retail_main' was properly closed.
+[0m15:43:18.108795 [debug] [MainThread]: Connection 'model.retail_bank_analytics.customer_360_view' was properly closed.
+[0m15:43:18.108965 [debug] [MainThread]: Connection 'model.retail_bank_analytics.dim_customers' was properly closed.
+[0m15:43:18.109130 [debug] [MainThread]: Connection 'model.retail_bank_analytics.stg_accounts' was properly closed.
+[0m15:43:18.109294 [debug] [MainThread]: Connection 'model.retail_bank_analytics.fct_transactions' was properly closed.
+[0m15:43:18.109568 [info ] [MainThread]: 
+[0m15:43:18.110049 [info ] [MainThread]: Finished running 3 table models, 3 view models in 0 hours 0 minutes and 0.70 seconds (0.70s).
+[0m15:43:18.111298 [debug] [MainThread]: Command end result
+[0m15:43:18.142139 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:43:18.145302 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:43:18.148184 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:43:18.155371 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\run_results.json
+[0m15:43:18.155715 [info ] [MainThread]: 
+[0m15:43:18.156293 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m15:43:18.156824 [info ] [MainThread]: 
+[0m15:43:18.157375 [error] [MainThread]: [[31mERROR[0m]: in model customer_360_view (models\marts\customer_360_view.sql)
+[0m15:43:18.157936 [error] [MainThread]:   Runtime Error in model customer_360_view (models\marts\customer_360_view.sql)
+  Binder Error: column "account_id" must appear in the GROUP BY clause or must be part of an aggregate function.
+  Either add it to the GROUP BY list, or use "ANY_VALUE(account_id)" if the exact value of "account_id" is not important.
+  
+  LINE 25:         account_id,
+                   ^
+[0m15:43:18.158310 [info ] [MainThread]: 
+[0m15:43:18.158854 [info ] [MainThread]:   compiled code at target\compiled\retail_bank_analytics\models\marts\customer_360_view.sql
+[0m15:43:18.159257 [info ] [MainThread]: 
+[0m15:43:18.159774 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+[0m15:43:18.161012 [debug] [MainThread]: Command `dbt run` failed at 15:43:18.160918 after 2.19 seconds
+[0m15:43:18.161312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F301BA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F92D3110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E5F9C7A210>]}
+[0m15:43:18.161581 [debug] [MainThread]: Flushing usage events
+[0m15:43:18.414938 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:44:32.417196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C07C3AE40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C05494E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A49F890>]}
+
+
+============================== 15:44:32.421725 | f142435e-9c2d-4468-bd8d-7fee7f63a88c ==============================
+[0m15:44:32.421725 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:44:32.422456 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'False', 'version_check': 'True', 'use_colors': 'True', 'log_format': 'default', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'use_experimental_parser': 'False', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'debug': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'printer_width': '80', 'static_parser': 'True', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m15:44:32.732981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A413950>]}
+[0m15:44:32.794936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C086B5040>]}
+[0m15:44:32.798129 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m15:44:33.228169 [debug] [MainThread]: checksum: 86b2f7d02667648145cacfd5a589c304891b79a74c7321d75c7ee0abdb0a02dd, vars: {}, profile: retail_bank_analytics, target: dev, version: 1.12.3
+[0m15:44:33.351958 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m15:44:33.352443 [debug] [MainThread]: Partial parsing: updated file: retail_bank_analytics://models\marts\customer_360_view.sql
+[0m15:44:33.597350 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0BB01050>]}
+[0m15:44:33.661951 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:44:33.665461 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:44:33.694639 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:44:33.706218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0BF457C0>]}
+[0m15:44:33.706646 [info ] [MainThread]: Found 6 models, 500 macros
+[0m15:44:33.707157 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0BF61710>]}
+[0m15:44:33.708861 [info ] [MainThread]: 
+[0m15:44:33.709413 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:44:33.709820 [info ] [MainThread]: 
+[0m15:44:33.710409 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:44:33.714733 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail'
+[0m15:44:33.806582 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail"
+[0m15:44:33.806949 [debug] [ThreadPool]: On list_banco_retail: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"banco_retail"'
+    
+  
+  
+[0m15:44:33.807179 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:44:33.820288 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m15:44:33.821781 [debug] [ThreadPool]: On list_banco_retail: Close
+[0m15:44:33.822468 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_banco_retail, now create_banco_retail_main)
+[0m15:44:33.822862 [debug] [ThreadPool]: Creating schema "database: "banco_retail"
+schema: "main"
+"
+[0m15:44:33.828297 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:44:33.828563 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='banco_retail'
+        and type != 'duckdb'
+    
+  
+[0m15:44:33.828778 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:44:33.829571 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m15:44:33.830495 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:44:33.830737 [debug] [ThreadPool]: On create_banco_retail_main: BEGIN
+[0m15:44:33.831114 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:44:33.831356 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:44:33.831556 [debug] [ThreadPool]: On create_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "create_banco_retail_main"} */
+
+    
+    
+        create schema if not exists "banco_retail"."main"
+    
+[0m15:44:33.831956 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:44:33.832529 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:44:33.832771 [debug] [ThreadPool]: Using duckdb connection "create_banco_retail_main"
+[0m15:44:33.832969 [debug] [ThreadPool]: On create_banco_retail_main: COMMIT
+[0m15:44:33.833291 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:44:33.833539 [debug] [ThreadPool]: On create_banco_retail_main: Close
+[0m15:44:33.834999 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail_main'
+[0m15:44:33.838768 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:44:33.839078 [debug] [ThreadPool]: On list_banco_retail_main: BEGIN
+[0m15:44:33.839287 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:44:33.839716 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m15:44:33.839984 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:44:33.840240 [debug] [ThreadPool]: On list_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail_main"} */
+select
+      'banco_retail' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'banco_retail'
+  
+[0m15:44:33.842893 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m15:44:33.843881 [debug] [ThreadPool]: On list_banco_retail_main: ROLLBACK
+[0m15:44:33.844304 [debug] [ThreadPool]: On list_banco_retail_main: Close
+[0m15:44:33.845698 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0C2E8BB0>]}
+[0m15:44:33.846110 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:44:33.846378 [debug] [MainThread]: On master: BEGIN
+[0m15:44:33.846620 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:44:33.847089 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:44:33.847363 [debug] [MainThread]: On master: COMMIT
+[0m15:44:33.847599 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:44:33.847825 [debug] [MainThread]: On master: COMMIT
+[0m15:44:33.848190 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:44:33.848462 [debug] [MainThread]: On master: Close
+[0m15:44:33.852550 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.stg_customers
+[0m15:44:33.852972 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.stg_transactions
+[0m15:44:33.853351 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.stg_accounts
+[0m15:44:33.853828 [info ] [Thread-2 (]: 2 of 6 START sql view model main.stg_customers ................................. [RUN]
+[0m15:44:33.855240 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_customers'
+[0m15:44:33.855550 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.stg_customers
+[0m15:44:33.860332 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.854760 [info ] [Thread-1 (]: 1 of 6 START sql view model main.stg_accounts .................................. [RUN]
+[0m15:44:33.861253 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_accounts'
+[0m15:44:33.861595 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.stg_accounts
+[0m15:44:33.854291 [info ] [Thread-3 (]: 3 of 6 START sql view model main.stg_transactions .............................. [RUN]
+[0m15:44:33.862873 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_transactions'
+[0m15:44:33.863193 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.stg_transactions
+[0m15:44:33.863905 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.862330 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.864376 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.stg_customers
+[0m15:44:33.890203 [debug] [Thread-2 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.890901 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.stg_accounts
+[0m15:44:33.893095 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.893549 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.stg_transactions
+[0m15:44:33.895941 [debug] [Thread-3 (]: Writing runtime sql for node "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.896497 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.897301 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: BEGIN
+[0m15:44:33.897603 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:44:33.896870 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.898200 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: BEGIN
+[0m15:44:33.898521 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:44:33.898999 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:44:33.899307 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.899595 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+  
+  create view "banco_retail"."main"."stg_accounts__dbt_tmp" as (
+    with raw_accounts as (
+    select * from read_csv_auto('../raw_data/raw_accounts.csv')
+)
+
+select
+    account_id,
+    customer_id,
+    account_type,
+    status as account_status,
+    open_date::DATE as open_date
+from raw_accounts
+  );
+
+[0m15:44:33.900125 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:44:33.900453 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.900782 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+  
+  create view "banco_retail"."main"."stg_customers__dbt_tmp" as (
+    with raw_customers as (
+    select * from read_csv_auto('../raw_data/raw_customers.csv')
+)
+
+select
+    customer_id,
+    age,
+    segment as customer_segment,
+    city,
+    join_date::DATE as join_date
+from raw_customers
+  );
+
+[0m15:44:33.901591 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.901921 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: BEGIN
+[0m15:44:33.902186 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:44:33.902773 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:44:33.903061 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.903333 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+  
+  create view "banco_retail"."main"."stg_transactions__dbt_tmp" as (
+    with raw_transactions as (
+    select * from read_csv_auto('../raw_data/raw_transactions.csv')
+)
+
+select
+    transaction_id,
+    account_id,
+    transaction_date::TIMESTAMP as transaction_timestamp,
+    transaction_type,
+    cast(amount as DECIMAL(10,2)) as amount_eur
+from raw_transactions
+  );
+
+[0m15:44:33.954574 [debug] [Thread-2 (]: SQL status: OK in 0.053 seconds
+[0m15:44:33.960131 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.960549 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+alter view "banco_retail"."main"."stg_customers" rename to "stg_customers__dbt_backup"
+[0m15:44:33.961406 [debug] [Thread-3 (]: SQL status: OK in 0.058 seconds
+[0m15:44:33.963917 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.964335 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+alter view "banco_retail"."main"."stg_transactions" rename to "stg_transactions__dbt_backup"
+[0m15:44:33.964780 [debug] [Thread-1 (]: SQL status: OK in 0.065 seconds
+[0m15:44:33.966965 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.967323 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+alter view "banco_retail"."main"."stg_accounts" rename to "stg_accounts__dbt_backup"
+[0m15:44:33.967799 [debug] [Thread-3 (]: SQL status: OK in 0.003 seconds
+[0m15:44:33.970009 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.970353 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+alter view "banco_retail"."main"."stg_transactions__dbt_tmp" rename to "stg_transactions"
+[0m15:44:33.968174 [debug] [Thread-2 (]: SQL status: OK in 0.007 seconds
+[0m15:44:33.972369 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.972661 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+alter view "banco_retail"."main"."stg_customers__dbt_tmp" rename to "stg_customers"
+[0m15:44:33.970849 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:44:33.974248 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.974533 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+alter view "banco_retail"."main"."stg_accounts__dbt_tmp" rename to "stg_accounts"
+[0m15:44:33.974928 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m15:44:33.986584 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:44:33.987005 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.987359 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: COMMIT
+[0m15:44:33.987955 [debug] [Thread-2 (]: SQL status: OK in 0.015 seconds
+[0m15:44:33.989514 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:44:33.989908 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:33.990242 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: COMMIT
+[0m15:44:33.990654 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m15:44:33.991958 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:44:33.992284 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.992577 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: COMMIT
+[0m15:44:33.993155 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m15:44:33.997072 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.stg_transactions"
+[0m15:44:33.997393 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_transactions"} */
+
+      drop view if exists "banco_retail"."main"."stg_transactions__dbt_backup" cascade
+    
+[0m15:44:33.997746 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m15:44:33.999249 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.stg_accounts"
+[0m15:44:33.999538 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_accounts"} */
+
+      drop view if exists "banco_retail"."main"."stg_accounts__dbt_backup" cascade
+    
+[0m15:44:34.000033 [debug] [Thread-2 (]: SQL status: OK in 0.009 seconds
+[0m15:44:34.001309 [debug] [Thread-2 (]: Using duckdb connection "model.retail_bank_analytics.stg_customers"
+[0m15:44:34.002435 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.stg_customers"} */
+
+      drop view if exists "banco_retail"."main"."stg_customers__dbt_backup" cascade
+    
+[0m15:44:34.002081 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m15:44:34.004254 [debug] [Thread-3 (]: On model.retail_bank_analytics.stg_transactions: Close
+[0m15:44:34.001672 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m15:44:34.006115 [debug] [Thread-1 (]: On model.retail_bank_analytics.stg_accounts: Close
+[0m15:44:34.007493 [debug] [Thread-2 (]: SQL status: OK in 0.005 seconds
+[0m15:44:34.008621 [debug] [Thread-2 (]: On model.retail_bank_analytics.stg_customers: Close
+[0m15:44:34.009319 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0BF26150>]}
+[0m15:44:34.010355 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A823800>]}
+[0m15:44:34.009869 [info ] [Thread-3 (]: 3 of 6 OK created sql view model main.stg_transactions ......................... [[32mOK[0m in 0.14s]
+[0m15:44:34.011440 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.stg_transactions
+[0m15:44:34.011917 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0C2ED4F0>]}
+[0m15:44:34.012375 [info ] [Thread-2 (]: 2 of 6 OK created sql view model main.stg_customers ............................ [[32mOK[0m in 0.15s]
+[0m15:44:34.010989 [info ] [Thread-1 (]: 1 of 6 OK created sql view model main.stg_accounts ............................. [[32mOK[0m in 0.15s]
+[0m15:44:34.014086 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.stg_accounts
+[0m15:44:34.013087 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.stg_customers
+[0m15:44:34.013445 [debug] [Thread-4 (]: Began running node model.retail_bank_analytics.fct_transactions
+[0m15:44:34.014625 [info ] [Thread-4 (]: 4 of 6 START sql table model main.fct_transactions ............................. [RUN]
+[0m15:44:34.015265 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.fct_transactions'
+[0m15:44:34.015623 [debug] [Thread-4 (]: Began compiling node model.retail_bank_analytics.fct_transactions
+[0m15:44:34.017318 [debug] [Thread-4 (]: Writing injected SQL for node "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.017813 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.dim_customers
+[0m15:44:34.018237 [info ] [Thread-3 (]: 5 of 6 START sql table model main.dim_customers ................................ [RUN]
+[0m15:44:34.018722 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_transactions, now model.retail_bank_analytics.dim_customers)
+[0m15:44:34.019108 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.dim_customers
+[0m15:44:34.020565 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.020947 [debug] [Thread-4 (]: Began executing node model.retail_bank_analytics.fct_transactions
+[0m15:44:34.059511 [debug] [Thread-4 (]: Writing runtime sql for node "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.060421 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.dim_customers
+[0m15:44:34.062872 [debug] [Thread-3 (]: Writing runtime sql for node "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.063465 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.063807 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: BEGIN
+[0m15:44:34.064096 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:44:34.064713 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.065026 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: BEGIN
+[0m15:44:34.065305 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:44:34.065607 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m15:44:34.066124 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.066441 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."fct_transactions__dbt_tmp"
+  
+    
+    as (
+      with stg_transactions as (
+    select * from "banco_retail"."main"."stg_transactions"
+),
+
+calc_running_balance as (
+    select
+        transaction_id,
+        account_id,
+        transaction_timestamp,
+        transaction_type,
+        amount_eur,
+        -- Window Function: Calcula el balance acumulado de la cuenta ordenado por fecha (Running Total)
+        sum(amount_eur) over (
+            partition by account_id 
+            order by transaction_timestamp 
+            rows between unbounded preceding and current row
+        ) as running_balance_eur
+    from stg_transactions
+)
+
+select * from calc_running_balance
+    );
+    
+  
+[0m15:44:34.066968 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m15:44:34.067265 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.067545 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."dim_customers__dbt_tmp"
+  
+    
+    as (
+      with stg_customers as (
+    select * from "banco_retail"."main"."stg_customers"
+)
+
+select
+    customer_id,
+    age,
+    case
+        when age < 25 then 'Gen Z'
+        when age between 25 and 40 then 'Millennial'
+        when age between 41 and 56 then 'Gen X'
+        else 'Boomer'
+    end as generational_cohort,
+    customer_segment,
+    city,
+    join_date,
+    date_diff('year', join_date, current_date) as customer_tenure_years
+from stg_customers
+    );
+    
+  
+[0m15:44:34.153171 [debug] [Thread-3 (]: SQL status: OK in 0.085 seconds
+[0m15:44:34.158149 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.158577 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'banco_retail'
+      AND schema_name = 'main'
+      AND table_name = 'dim_customers'
+  
+[0m15:44:34.159560 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m15:44:34.161897 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.162262 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+alter table "banco_retail"."main"."dim_customers" rename to "dim_customers__dbt_backup"
+[0m15:44:34.162932 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m15:44:34.165121 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.165495 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+alter table "banco_retail"."main"."dim_customers__dbt_tmp" rename to "dim_customers"
+[0m15:44:34.165938 [debug] [Thread-4 (]: SQL status: OK in 0.099 seconds
+[0m15:44:34.166819 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.167679 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'banco_retail'
+      AND schema_name = 'main'
+      AND table_name = 'fct_transactions'
+  
+[0m15:44:34.167202 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:44:34.172099 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: COMMIT
+[0m15:44:34.172450 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.172740 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: COMMIT
+[0m15:44:34.173119 [debug] [Thread-4 (]: SQL status: OK in 0.005 seconds
+[0m15:44:34.174795 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.175088 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+alter table "banco_retail"."main"."fct_transactions" rename to "fct_transactions__dbt_backup"
+[0m15:44:34.175648 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m15:44:34.177110 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.177849 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+alter table "banco_retail"."main"."fct_transactions__dbt_tmp" rename to "fct_transactions"
+[0m15:44:34.177414 [debug] [Thread-3 (]: SQL status: OK in 0.004 seconds
+[0m15:44:34.179137 [debug] [Thread-3 (]: Using duckdb connection "model.retail_bank_analytics.dim_customers"
+[0m15:44:34.179460 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.dim_customers"} */
+
+      drop table if exists "banco_retail"."main"."dim_customers__dbt_backup" cascade
+    
+[0m15:44:34.179937 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m15:44:34.181253 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: COMMIT
+[0m15:44:34.181545 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.182285 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: COMMIT
+[0m15:44:34.181851 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m15:44:34.183496 [debug] [Thread-3 (]: On model.retail_bank_analytics.dim_customers: Close
+[0m15:44:34.184017 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0BB660D0>]}
+[0m15:44:34.184488 [info ] [Thread-3 (]: 5 of 6 OK created sql table model main.dim_customers ........................... [[32mOK[0m in 0.17s]
+[0m15:44:34.185188 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.dim_customers
+[0m15:44:34.191563 [debug] [Thread-4 (]: SQL status: OK in 0.009 seconds
+[0m15:44:34.192989 [debug] [Thread-4 (]: Using duckdb connection "model.retail_bank_analytics.fct_transactions"
+[0m15:44:34.193276 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.fct_transactions"} */
+
+      drop table if exists "banco_retail"."main"."fct_transactions__dbt_backup" cascade
+    
+[0m15:44:34.194396 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m15:44:34.195634 [debug] [Thread-4 (]: On model.retail_bank_analytics.fct_transactions: Close
+[0m15:44:34.196176 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A815630>]}
+[0m15:44:34.196701 [info ] [Thread-4 (]: 4 of 6 OK created sql table model main.fct_transactions ........................ [[32mOK[0m in 0.18s]
+[0m15:44:34.197470 [debug] [Thread-4 (]: Finished running node model.retail_bank_analytics.fct_transactions
+[0m15:44:34.198140 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.customer_360_view
+[0m15:44:34.198541 [info ] [Thread-1 (]: 6 of 6 START sql table model main.customer_360_view ............................ [RUN]
+[0m15:44:34.199255 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_accounts, now model.retail_bank_analytics.customer_360_view)
+[0m15:44:34.199529 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.customer_360_view
+[0m15:44:34.201505 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.202542 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.customer_360_view
+[0m15:44:34.205035 [debug] [Thread-1 (]: Writing runtime sql for node "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.205925 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.206255 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: BEGIN
+[0m15:44:34.206535 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m15:44:34.207141 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m15:44:34.207448 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.207858 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.customer_360_view"} */
+
+    
+
+    create  table
+      "banco_retail"."main"."customer_360_view__dbt_tmp"
+  
+    
+    as (
+      with dim_customers as (
+    select * from "banco_retail"."main"."dim_customers"
+),
+
+stg_accounts as (
+    select * from "banco_retail"."main"."stg_accounts"
+),
+
+fct_transactions as (
+    select * from "banco_retail"."main"."fct_transactions"
+),
+
+-- CTE 1: Agregamos a nivel de cuenta (Último balance y volumen de transacciones)
+account_metrics as (
+    select
+        account_id,
+        count(transaction_id) as total_transactions,
+        sum(case when amount_eur < 0 then amount_eur else 0 end) as total_money_out,
+        sum(case when amount_eur > 0 then amount_eur else 0 end) as total_money_in,
+        -- Función avanzada de agregación: Obtenemos el balance de la última transacción cronológicamente
+        arg_max(running_balance_eur, transaction_timestamp) as current_balance
+    from fct_transactions
+    group by account_id
+),
+
+-- CTE 2: Agregamos a nivel de cliente (Cruzando cuentas)
+customer_metrics as (
+    select
+        a.customer_id,
+        count(a.account_id) as total_accounts,
+        sum(am.current_balance) as total_portfolio_balance,
+        sum(am.total_transactions) as total_transaction_volume
+    from stg_accounts a
+    left join account_metrics am on a.account_id = am.account_id
+    group by a.customer_id
+)
+
+-- FINAL JOIN: Cruzamos la demografía con las métricas financieras
+select
+    c.customer_id,
+    c.generational_cohort,
+    c.customer_segment,
+    c.city,
+    c.customer_tenure_years,
+    coalesce(cm.total_accounts, 0) as active_accounts,
+    coalesce(cm.total_portfolio_balance, 0) as total_portfolio_balance_eur,
+    coalesce(cm.total_transaction_volume, 0) as total_transaction_volume,
+    -- Simple Business Logic para detectar cuentas de alto valor
+    case 
+        when cm.total_portfolio_balance > 50000 then 'High Net Worth'
+        when cm.total_portfolio_balance < 0 then 'Overdrawn (Risk)'
+        else 'Standard'
+    end as financial_health_status
+from dim_customers c
+left join customer_metrics cm on c.customer_id = cm.customer_id
+    );
+    
+  
+[0m15:44:34.286523 [debug] [Thread-1 (]: SQL status: OK in 0.078 seconds
+[0m15:44:34.288559 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.289015 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.customer_360_view"} */
+alter table "banco_retail"."main"."customer_360_view__dbt_tmp" rename to "customer_360_view"
+[0m15:44:34.289651 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:44:34.290795 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: COMMIT
+[0m15:44:34.291097 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.291370 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: COMMIT
+[0m15:44:34.294177 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:44:34.295402 [debug] [Thread-1 (]: Using duckdb connection "model.retail_bank_analytics.customer_360_view"
+[0m15:44:34.295681 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "model.retail_bank_analytics.customer_360_view"} */
+
+      drop table if exists "banco_retail"."main"."customer_360_view__dbt_backup" cascade
+    
+[0m15:44:34.296148 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m15:44:34.297091 [debug] [Thread-1 (]: On model.retail_bank_analytics.customer_360_view: Close
+[0m15:44:34.297525 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f142435e-9c2d-4468-bd8d-7fee7f63a88c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0C214290>]}
+[0m15:44:34.298124 [info ] [Thread-1 (]: 6 of 6 OK created sql table model main.customer_360_view ....................... [[32mOK[0m in 0.10s]
+[0m15:44:34.298841 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.customer_360_view
+[0m15:44:34.300071 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:44:34.300349 [debug] [MainThread]: On master: BEGIN
+[0m15:44:34.300626 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:44:34.301063 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:44:34.301310 [debug] [MainThread]: On master: COMMIT
+[0m15:44:34.301526 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:44:34.301719 [debug] [MainThread]: On master: COMMIT
+[0m15:44:34.302044 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:44:34.302376 [debug] [MainThread]: On master: Close
+[0m15:44:34.302724 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:44:34.302917 [debug] [MainThread]: Connection 'create_banco_retail_main' was properly closed.
+[0m15:44:34.303094 [debug] [MainThread]: Connection 'list_banco_retail_main' was properly closed.
+[0m15:44:34.303262 [debug] [MainThread]: Connection 'model.retail_bank_analytics.stg_customers' was properly closed.
+[0m15:44:34.303426 [debug] [MainThread]: Connection 'model.retail_bank_analytics.customer_360_view' was properly closed.
+[0m15:44:34.303691 [debug] [MainThread]: Connection 'model.retail_bank_analytics.dim_customers' was properly closed.
+[0m15:44:34.304031 [debug] [MainThread]: Connection 'model.retail_bank_analytics.fct_transactions' was properly closed.
+[0m15:44:34.304354 [info ] [MainThread]: 
+[0m15:44:34.304861 [info ] [MainThread]: Finished running 3 table models, 3 view models in 0 hours 0 minutes and 0.59 seconds (0.59s).
+[0m15:44:34.306259 [debug] [MainThread]: Command end result
+[0m15:44:34.340445 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:44:34.343559 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:44:34.346278 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:44:34.352909 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\run_results.json
+[0m15:44:34.353267 [info ] [MainThread]: 
+[0m15:44:34.354060 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:44:34.354709 [info ] [MainThread]: 
+[0m15:44:34.355322 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+[0m15:44:34.356743 [debug] [MainThread]: Command `dbt run` succeeded at 15:44:34.356625 after 2.11 seconds
+[0m15:44:34.357124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A196870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0A493D70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015C0C22AA50>]}
+[0m15:44:34.357481 [debug] [MainThread]: Flushing usage events
+[0m15:44:34.600794 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:46:21.721398 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B62F1C2E40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B62CA04E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B631A2F890>]}
+
+
+============================== 15:46:21.725843 | 3fc96130-a506-4b80-a3df-5cfe765723ae ==============================
+[0m15:46:21.725843 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:46:21.726593 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'empty': 'None', 'version_check': 'True', 'use_colors': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'invocation_command': 'dbt test', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'quiet': 'False', 'static_parser': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'printer_width': '80', 'partial_parse': 'True', 'log_cache_events': 'False'}
+[0m15:46:22.055465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6319A3950>]}
+[0m15:46:22.115065 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B62FC45040>]}
+[0m15:46:22.117993 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m15:46:22.523725 [debug] [MainThread]: checksum: 86b2f7d02667648145cacfd5a589c304891b79a74c7321d75c7ee0abdb0a02dd, vars: {}, profile: retail_bank_analytics, target: dev, version: 1.12.3
+[0m15:46:22.637872 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 1 files added, 0 files changed.
+[0m15:46:22.638364 [debug] [MainThread]: Partial parsing: added file: retail_bank_analytics://models\marts\schema.yml
+[0m15:46:22.926712 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `accepted_values` defined on
+'customer_360_view' in package 'retail_bank_analytics'
+(models\marts\schema.yml). Arguments to generic tests should be nested under the
+`arguments` property.
+[0m15:46:22.932441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B631B13950>]}
+[0m15:46:23.021406 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6332A9B80>]}
+[0m15:46:23.101242 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:46:23.104481 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:46:23.132090 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:46:23.152824 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6335B59B0>]}
+[0m15:46:23.153260 [info ] [MainThread]: Found 6 models, 5 data tests, 500 macros
+[0m15:46:23.153764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B63359C120>]}
+[0m15:46:23.155450 [info ] [MainThread]: 
+[0m15:46:23.155915 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:46:23.156304 [info ] [MainThread]: 
+[0m15:46:23.156837 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:46:23.161223 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail_main'
+[0m15:46:23.247444 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:46:23.247899 [debug] [ThreadPool]: On list_banco_retail_main: BEGIN
+[0m15:46:23.248398 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:23.260305 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m15:46:23.260642 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:46:23.260953 [debug] [ThreadPool]: On list_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail_main"} */
+select
+      'banco_retail' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'banco_retail'
+  
+[0m15:46:23.263926 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m15:46:23.264979 [debug] [ThreadPool]: On list_banco_retail_main: ROLLBACK
+[0m15:46:23.265368 [debug] [ThreadPool]: On list_banco_retail_main: Close
+[0m15:46:23.266781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3fc96130-a506-4b80-a3df-5cfe765723ae', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B63359A090>]}
+[0m15:46:23.267140 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:46:23.267358 [debug] [MainThread]: On master: BEGIN
+[0m15:46:23.267553 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:46:23.267912 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:46:23.268261 [debug] [MainThread]: On master: COMMIT
+[0m15:46:23.268487 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:46:23.268691 [debug] [MainThread]: On master: COMMIT
+[0m15:46:23.269008 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:46:23.269254 [debug] [MainThread]: On master: Close
+[0m15:46:23.273357 [debug] [Thread-4 (]: Began running node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:23.274131 [debug] [Thread-3 (]: Began running node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:23.274522 [debug] [Thread-2 (]: Began running node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:23.273768 [info ] [Thread-4 (]: 4 of 5 START test unique_customer_360_view_customer_id ......................... [RUN]
+[0m15:46:23.276227 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4'
+[0m15:46:23.276545 [debug] [Thread-4 (]: Began compiling node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:23.275020 [debug] [Thread-1 (]: Began running node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:23.275390 [info ] [Thread-3 (]: 3 of 5 START test not_null_fct_transactions_transaction_id ..................... [RUN]
+[0m15:46:23.288097 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa'
+[0m15:46:23.288439 [debug] [Thread-3 (]: Began compiling node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:23.286956 [debug] [Thread-4 (]: Writing injected SQL for node "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"
+[0m15:46:23.275701 [info ] [Thread-2 (]: 2 of 5 START test not_null_customer_360_view_customer_id ....................... [RUN]
+[0m15:46:23.297809 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e'
+[0m15:46:23.298171 [debug] [Thread-2 (]: Began compiling node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:23.303278 [debug] [Thread-2 (]: Writing injected SQL for node "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"
+[0m15:46:23.297005 [debug] [Thread-3 (]: Writing injected SQL for node "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"
+[0m15:46:23.287483 [info ] [Thread-1 (]: 1 of 5 START test accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_  [RUN]
+[0m15:46:23.304011 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a'
+[0m15:46:23.304426 [debug] [Thread-1 (]: Began compiling node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:23.310096 [debug] [Thread-1 (]: Writing injected SQL for node "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"
+[0m15:46:23.310510 [debug] [Thread-4 (]: Began executing node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:23.325356 [debug] [Thread-2 (]: Began executing node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:23.328102 [debug] [Thread-2 (]: Writing runtime sql for node "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"
+[0m15:46:23.328651 [debug] [Thread-4 (]: Writing runtime sql for node "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"
+[0m15:46:23.329366 [debug] [Thread-3 (]: Began executing node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:23.331122 [debug] [Thread-3 (]: Writing runtime sql for node "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"
+[0m15:46:23.329822 [debug] [Thread-1 (]: Began executing node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:23.332627 [debug] [Thread-1 (]: Writing runtime sql for node "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"
+[0m15:46:23.333027 [debug] [Thread-4 (]: Using duckdb connection "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"
+[0m15:46:23.333953 [debug] [Thread-4 (]: On test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4: BEGIN
+[0m15:46:23.334295 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m15:46:23.334629 [debug] [Thread-3 (]: Using duckdb connection "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"
+[0m15:46:23.333414 [debug] [Thread-2 (]: Using duckdb connection "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"
+[0m15:46:23.335648 [debug] [Thread-2 (]: On test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e: BEGIN
+[0m15:46:23.336274 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m15:46:23.335972 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m15:46:23.335296 [debug] [Thread-3 (]: On test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa: BEGIN
+[0m15:46:23.337744 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m15:46:23.337077 [debug] [Thread-4 (]: Using duckdb connection "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"
+[0m15:46:23.338147 [debug] [Thread-4 (]: On test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    customer_id as unique_field,
+    count(*) as n_records
+
+from "banco_retail"."main"."customer_360_view"
+where customer_id is not null
+group by customer_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:46:23.336749 [debug] [Thread-1 (]: Using duckdb connection "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"
+[0m15:46:23.337399 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m15:46:23.339392 [debug] [Thread-2 (]: Using duckdb connection "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"
+[0m15:46:23.339716 [debug] [Thread-2 (]: On test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select customer_id
+from "banco_retail"."main"."customer_360_view"
+where customer_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:46:23.338503 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:46:23.340249 [debug] [Thread-3 (]: Using duckdb connection "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"
+[0m15:46:23.340615 [debug] [Thread-3 (]: On test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select transaction_id
+from "banco_retail"."main"."fct_transactions"
+where transaction_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:46:23.339027 [debug] [Thread-1 (]: On test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a: BEGIN
+[0m15:46:23.341399 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m15:46:23.341974 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m15:46:23.342351 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m15:46:23.342688 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m15:46:23.346107 [debug] [Thread-4 (]: On test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4: ROLLBACK
+[0m15:46:23.346570 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m15:46:23.347614 [debug] [Thread-2 (]: On test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e: ROLLBACK
+[0m15:46:23.348681 [debug] [Thread-3 (]: On test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa: ROLLBACK
+[0m15:46:23.349202 [debug] [Thread-1 (]: Using duckdb connection "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"
+[0m15:46:23.350148 [debug] [Thread-1 (]: On test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        financial_health_status as value_field,
+        count(*) as n_records
+
+    from "banco_retail"."main"."customer_360_view"
+    group by financial_health_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'High Net Worth','Standard','Overdrawn (Risk)'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:46:23.350895 [debug] [Thread-3 (]: On test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa: Close
+[0m15:46:23.349595 [debug] [Thread-4 (]: On test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4: Close
+[0m15:46:23.350492 [debug] [Thread-2 (]: On test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e: Close
+[0m15:46:23.351457 [info ] [Thread-3 (]: 3 of 5 PASS not_null_fct_transactions_transaction_id ........................... [[32mPASS[0m in 0.06s]
+[0m15:46:23.353146 [debug] [Thread-3 (]: Finished running node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:23.353503 [debug] [Thread-3 (]: Began running node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:23.353888 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m15:46:23.352701 [info ] [Thread-2 (]: 2 of 5 PASS not_null_customer_360_view_customer_id ............................. [[32mPASS[0m in 0.05s]
+[0m15:46:23.354871 [debug] [Thread-2 (]: Finished running node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:23.352118 [info ] [Thread-4 (]: 4 of 5 PASS unique_customer_360_view_customer_id ............................... [[32mPASS[0m in 0.08s]
+[0m15:46:23.355558 [debug] [Thread-4 (]: Finished running node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:23.354294 [info ] [Thread-3 (]: 5 of 5 START test unique_fct_transactions_transaction_id ....................... [RUN]
+[0m15:46:23.357166 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa, now test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53)
+[0m15:46:23.357502 [debug] [Thread-3 (]: Began compiling node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:23.363139 [debug] [Thread-3 (]: Writing injected SQL for node "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"
+[0m15:46:23.356786 [debug] [Thread-1 (]: On test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a: ROLLBACK
+[0m15:46:23.363821 [debug] [Thread-1 (]: On test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a: Close
+[0m15:46:23.364789 [debug] [Thread-3 (]: Began executing node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:23.366301 [debug] [Thread-3 (]: Writing runtime sql for node "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"
+[0m15:46:23.364417 [info ] [Thread-1 (]: 1 of 5 PASS accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_  [[32mPASS[0m in 0.06s]
+[0m15:46:23.366892 [debug] [Thread-1 (]: Finished running node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:23.367642 [debug] [Thread-3 (]: Using duckdb connection "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"
+[0m15:46:23.367974 [debug] [Thread-3 (]: On test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53: BEGIN
+[0m15:46:23.368306 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m15:46:23.368855 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m15:46:23.369154 [debug] [Thread-3 (]: Using duckdb connection "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"
+[0m15:46:23.369439 [debug] [Thread-3 (]: On test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "node_id": "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    transaction_id as unique_field,
+    count(*) as n_records
+
+from "banco_retail"."main"."fct_transactions"
+where transaction_id is not null
+group by transaction_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:46:23.375174 [debug] [Thread-3 (]: SQL status: OK in 0.005 seconds
+[0m15:46:23.376515 [debug] [Thread-3 (]: On test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53: ROLLBACK
+[0m15:46:23.377088 [debug] [Thread-3 (]: On test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53: Close
+[0m15:46:23.377631 [info ] [Thread-3 (]: 5 of 5 PASS unique_fct_transactions_transaction_id ............................. [[32mPASS[0m in 0.02s]
+[0m15:46:23.378441 [debug] [Thread-3 (]: Finished running node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:23.379662 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:46:23.379911 [debug] [MainThread]: On master: BEGIN
+[0m15:46:23.380116 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:46:23.380514 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:46:23.380762 [debug] [MainThread]: On master: COMMIT
+[0m15:46:23.381002 [debug] [MainThread]: Using duckdb connection "master"
+[0m15:46:23.381220 [debug] [MainThread]: On master: COMMIT
+[0m15:46:23.381562 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m15:46:23.381812 [debug] [MainThread]: On master: Close
+[0m15:46:23.382131 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:46:23.382352 [debug] [MainThread]: Connection 'list_banco_retail_main' was properly closed.
+[0m15:46:23.382558 [debug] [MainThread]: Connection 'test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4' was properly closed.
+[0m15:46:23.382750 [debug] [MainThread]: Connection 'test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53' was properly closed.
+[0m15:46:23.383077 [debug] [MainThread]: Connection 'test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e' was properly closed.
+[0m15:46:23.383319 [debug] [MainThread]: Connection 'test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a' was properly closed.
+[0m15:46:23.383584 [info ] [MainThread]: 
+[0m15:46:23.384025 [info ] [MainThread]: Finished running 5 data tests in 0 hours 0 minutes and 0.23 seconds (0.23s).
+[0m15:46:23.385098 [debug] [MainThread]: Command end result
+[0m15:46:23.423905 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:46:23.427599 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:46:23.430942 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:46:23.438474 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\run_results.json
+[0m15:46:23.438810 [info ] [MainThread]: 
+[0m15:46:23.439451 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:46:23.439943 [info ] [MainThread]: 
+[0m15:46:23.440473 [info ] [MainThread]: Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+[0m15:46:23.441070 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m15:46:23.442216 [debug] [MainThread]: Command `dbt test` succeeded at 15:46:23.442122 after 1.90 seconds
+[0m15:46:23.442504 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B6339C1650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B63388F890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B63388FCF0>]}
+[0m15:46:23.442790 [debug] [MainThread]: Flushing usage events
+[0m15:46:23.684135 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:46:49.647705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8BDA1AE40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8BB274E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C027F9D0>]}
+
+
+============================== 15:46:49.651965 | 9079831a-64b2-4415-8f39-b78b55df2f19 ==============================
+[0m15:46:49.651965 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:46:49.652579 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'version_check': 'True', 'empty': 'None', 'use_colors': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'invocation_command': 'dbt docs generate', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'no_print': 'None', 'indirect_selection': 'eager', 'write_json': 'True', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'quiet': 'False', 'static_parser': 'True', 'introspect': 'True', 'cache_selected_only': 'False', 'partial_parse': 'True', 'log_cache_events': 'False', 'printer_width': '80'}
+[0m15:46:49.978749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C01F3A80>]}
+[0m15:46:50.033729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8BE495040>]}
+[0m15:46:50.037036 [info ] [MainThread]: Registered adapter: duckdb=1.11.0
+[0m15:46:50.464961 [debug] [MainThread]: checksum: 86b2f7d02667648145cacfd5a589c304891b79a74c7321d75c7ee0abdb0a02dd, vars: {}, profile: retail_bank_analytics, target: dev, version: 1.12.3
+[0m15:46:50.609730 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m15:46:50.610067 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m15:46:50.610324 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m15:46:50.618878 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C188EF50>]}
+[0m15:46:50.661245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C04DA5D0>]}
+[0m15:46:50.661743 [info ] [MainThread]: Found 6 models, 5 data tests, 500 macros
+[0m15:46:50.662324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C03C7AF0>]}
+[0m15:46:50.664104 [info ] [MainThread]: 
+[0m15:46:50.664630 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m15:46:50.665004 [info ] [MainThread]: 
+[0m15:46:50.665673 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m15:46:50.670893 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_banco_retail_main'
+[0m15:46:50.766116 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:46:50.766456 [debug] [ThreadPool]: On list_banco_retail_main: BEGIN
+[0m15:46:50.766682 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:50.779213 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m15:46:50.779577 [debug] [ThreadPool]: Using duckdb connection "list_banco_retail_main"
+[0m15:46:50.779826 [debug] [ThreadPool]: On list_banco_retail_main: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "list_banco_retail_main"} */
+select
+      'banco_retail' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'banco_retail'
+  
+[0m15:46:50.782781 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m15:46:50.783830 [debug] [ThreadPool]: On list_banco_retail_main: ROLLBACK
+[0m15:46:50.784247 [debug] [ThreadPool]: On list_banco_retail_main: Close
+[0m15:46:50.785685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9079831a-64b2-4415-8f39-b78b55df2f19', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C1C19710>]}
+[0m15:46:50.789731 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.stg_customers
+[0m15:46:50.790635 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_customers'
+[0m15:46:50.790962 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.stg_customers
+[0m15:46:50.794955 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_customers"
+[0m15:46:50.795353 [debug] [Thread-3 (]: Began running node model.retail_bank_analytics.stg_transactions
+[0m15:46:50.790138 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.stg_accounts
+[0m15:46:50.796277 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_accounts'
+[0m15:46:50.796678 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.stg_accounts
+[0m15:46:50.797426 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_accounts"
+[0m15:46:50.795833 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.stg_transactions'
+[0m15:46:50.797839 [debug] [Thread-3 (]: Began compiling node model.retail_bank_analytics.stg_transactions
+[0m15:46:50.799377 [debug] [Thread-3 (]: Writing injected SQL for node "model.retail_bank_analytics.stg_transactions"
+[0m15:46:50.798446 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.stg_customers
+[0m15:46:50.800119 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.stg_customers
+[0m15:46:50.800496 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.stg_accounts
+[0m15:46:50.801116 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.stg_accounts
+[0m15:46:50.801611 [debug] [Thread-4 (]: Began running node model.retail_bank_analytics.dim_customers
+[0m15:46:50.802009 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.retail_bank_analytics.dim_customers'
+[0m15:46:50.802303 [debug] [Thread-4 (]: Began compiling node model.retail_bank_analytics.dim_customers
+[0m15:46:50.804073 [debug] [Thread-4 (]: Writing injected SQL for node "model.retail_bank_analytics.dim_customers"
+[0m15:46:50.804542 [debug] [Thread-3 (]: Began executing node model.retail_bank_analytics.stg_transactions
+[0m15:46:50.805131 [debug] [Thread-3 (]: Finished running node model.retail_bank_analytics.stg_transactions
+[0m15:46:50.805590 [debug] [Thread-2 (]: Began running node model.retail_bank_analytics.fct_transactions
+[0m15:46:50.806310 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_customers, now model.retail_bank_analytics.fct_transactions)
+[0m15:46:50.806658 [debug] [Thread-2 (]: Began compiling node model.retail_bank_analytics.fct_transactions
+[0m15:46:50.807997 [debug] [Thread-2 (]: Writing injected SQL for node "model.retail_bank_analytics.fct_transactions"
+[0m15:46:50.805908 [debug] [Thread-4 (]: Began executing node model.retail_bank_analytics.dim_customers
+[0m15:46:50.808926 [debug] [Thread-4 (]: Finished running node model.retail_bank_analytics.dim_customers
+[0m15:46:50.809606 [debug] [Thread-2 (]: Began executing node model.retail_bank_analytics.fct_transactions
+[0m15:46:50.810160 [debug] [Thread-2 (]: Finished running node model.retail_bank_analytics.fct_transactions
+[0m15:46:50.810732 [debug] [Thread-1 (]: Began running node model.retail_bank_analytics.customer_360_view
+[0m15:46:50.811480 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_accounts, now model.retail_bank_analytics.customer_360_view)
+[0m15:46:50.811799 [debug] [Thread-1 (]: Began compiling node model.retail_bank_analytics.customer_360_view
+[0m15:46:50.813883 [debug] [Thread-1 (]: Writing injected SQL for node "model.retail_bank_analytics.customer_360_view"
+[0m15:46:50.811120 [debug] [Thread-3 (]: Began running node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:50.812096 [debug] [Thread-4 (]: Began running node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:50.814754 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.dim_customers, now test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53)
+[0m15:46:50.815057 [debug] [Thread-4 (]: Began compiling node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:50.814354 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.stg_transactions, now test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa)
+[0m15:46:50.824791 [debug] [Thread-3 (]: Began compiling node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:50.833815 [debug] [Thread-3 (]: Writing injected SQL for node "test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa"
+[0m15:46:50.824275 [debug] [Thread-4 (]: Writing injected SQL for node "test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53"
+[0m15:46:50.834440 [debug] [Thread-1 (]: Began executing node model.retail_bank_analytics.customer_360_view
+[0m15:46:50.835358 [debug] [Thread-1 (]: Finished running node model.retail_bank_analytics.customer_360_view
+[0m15:46:50.835983 [debug] [Thread-3 (]: Began executing node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:50.837523 [debug] [Thread-3 (]: Finished running node test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa
+[0m15:46:50.837864 [debug] [Thread-3 (]: Began running node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:50.838175 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.retail_bank_analytics.not_null_fct_transactions_transaction_id.2c6b5372aa, now test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4)
+[0m15:46:50.838462 [debug] [Thread-3 (]: Began compiling node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:50.836750 [debug] [Thread-1 (]: Began running node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:50.836347 [debug] [Thread-2 (]: Began running node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:50.843334 [debug] [Thread-3 (]: Writing injected SQL for node "test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4"
+[0m15:46:50.843752 [debug] [Thread-4 (]: Began executing node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:50.845529 [debug] [Thread-4 (]: Finished running node test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53
+[0m15:46:50.844720 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.fct_transactions, now test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a)
+[0m15:46:50.844239 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.retail_bank_analytics.customer_360_view, now test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e)
+[0m15:46:50.846357 [debug] [Thread-1 (]: Began compiling node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:50.850976 [debug] [Thread-1 (]: Writing injected SQL for node "test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e"
+[0m15:46:50.845992 [debug] [Thread-2 (]: Began compiling node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:50.869724 [debug] [Thread-2 (]: Writing injected SQL for node "test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a"
+[0m15:46:50.870413 [debug] [Thread-3 (]: Began executing node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:50.871375 [debug] [Thread-3 (]: Finished running node test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4
+[0m15:46:50.872105 [debug] [Thread-2 (]: Began executing node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:50.872807 [debug] [Thread-2 (]: Finished running node test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a
+[0m15:46:50.873372 [debug] [Thread-1 (]: Began executing node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:50.873956 [debug] [Thread-1 (]: Finished running node test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e
+[0m15:46:50.875070 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:46:50.875340 [debug] [MainThread]: Connection 'list_banco_retail_main' was properly closed.
+[0m15:46:50.875597 [debug] [MainThread]: Connection 'test.retail_bank_analytics.accepted_values_customer_360_view_financial_health_status__High_Net_Worth__Standard__Overdrawn_Risk_.561339429a' was properly closed.
+[0m15:46:50.875813 [debug] [MainThread]: Connection 'test.retail_bank_analytics.unique_customer_360_view_customer_id.09c3c72bb4' was properly closed.
+[0m15:46:50.876007 [debug] [MainThread]: Connection 'test.retail_bank_analytics.not_null_customer_360_view_customer_id.e333733c7e' was properly closed.
+[0m15:46:50.876200 [debug] [MainThread]: Connection 'test.retail_bank_analytics.unique_fct_transactions_transaction_id.c963611c53' was properly closed.
+[0m15:46:50.877578 [debug] [MainThread]: Command end result
+[0m15:46:50.956411 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:46:50.959813 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:46:50.990871 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:46:50.997449 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\run_results.json
+[0m15:46:51.013263 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m15:46:51.013601 [info ] [MainThread]: Building catalog
+[0m15:46:51.021224 [debug] [ThreadPool]: Acquiring new duckdb connection 'banco_retail.information_schema'
+[0m15:46:51.031308 [debug] [ThreadPool]: Using duckdb connection "banco_retail.information_schema"
+[0m15:46:51.031730 [debug] [ThreadPool]: On banco_retail.information_schema: /* {"app": "dbt", "dbt_version": "1.12.3", "profile_name": "retail_bank_analytics", "target_name": "dev", "connection_name": "banco_retail.information_schema"} */
+
+    
+    with tables as (
+      select *
+    from (
+        select
+            t.database_name as table_database,
+            t.schema_name as table_schema,
+            t.table_name as table_name,
+            'BASE TABLE' as table_type,
+            t.comment as table_comment
+        from duckdb_tables() t
+        where upper(t.database_name) = upper('banco_retail')
+
+        union all
+
+        select
+            v.database_name as table_database,
+            v.schema_name as table_schema,
+            v.view_name as table_name,
+            'VIEW' as table_type,
+            v.comment as table_comment
+        from duckdb_views() v
+        where upper(v.database_name) = upper('banco_retail')
+    ) catalog_tables
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('fct_transactions')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('dim_customers')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_customers')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_accounts')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('customer_360_view')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_transactions')
+                ))
+    
+    ),
+    columns as (
+      select *
+    from (
+        select
+            c.database_name as table_database,
+            c.schema_name as table_schema,
+            c.table_name as table_name,
+            c.column_name as column_name,
+            c.column_index as column_index,
+            c.data_type as column_type,
+            c.comment as column_comment
+        from duckdb_columns() c
+        where upper(c.database_name) = upper('banco_retail')
+    ) catalog_columns
+      
+        where (
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('fct_transactions')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('dim_customers')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_customers')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_accounts')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('customer_360_view')
+                ) or 
+
+                (
+                    upper(table_schema) = upper('main')
+                    and upper(table_name) = upper('stg_transactions')
+                ))
+    
+    )
+    select
+        tables.table_database,
+        tables.table_schema,
+        tables.table_name,
+        tables.table_type,
+        tables.table_comment,
+        columns.column_name,
+        columns.column_index,
+        columns.column_type,
+        columns.column_comment,
+        null as table_owner
+    from tables
+    join columns using (table_database, table_schema, table_name)
+    order by table_schema, table_name, column_index
+  
+  
+[0m15:46:51.032148 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:46:51.043071 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m15:46:51.045582 [debug] [ThreadPool]: On banco_retail.information_schema: Close
+[0m15:46:51.055674 [debug] [MainThread]: Wrote artifact CatalogArtifact to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\catalog.json
+[0m15:46:51.096728 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\manifest.json
+[0m15:46:51.099888 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\semantic_manifest.json
+[0m15:46:51.102902 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\osi_document.json
+[0m15:46:51.103215 [info ] [MainThread]: Catalog written to C:\Users\es00700248\Desktop\Personal\Financial-Analytics-Showcase\4_Retail_Banking_dbt\retail_bank_analytics\target\catalog.json
+[0m15:46:51.104718 [debug] [MainThread]: Command `dbt docs generate` succeeded at 15:46:51.104610 after 1.61 seconds
+[0m15:46:51.104978 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m15:46:51.105401 [debug] [MainThread]: Connection 'banco_retail.information_schema' was properly closed.
+[0m15:46:51.105664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C1A9FA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C1D0C890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A8C1D0C9F0>]}
+[0m15:46:51.105935 [debug] [MainThread]: Flushing usage events
+[0m15:46:51.347492 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:47:05.319758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149E74B6E40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149E4CE4E10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149E9C9B890>]}
+
+
+============================== 15:47:05.324127 | 0627acfd-f587-4644-a2ac-e5e09d1a0483 ==============================
+[0m15:47:05.324127 [info ] [MainThread]: Running with dbt=1.12.3
+[0m15:47:05.324825 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'version_check': 'True', 'empty': 'None', 'use_colors': 'True', 'log_format': 'default', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt docs serve', 'send_anonymous_usage_stats': 'True', 'warn_error': 'None', 'target_path': 'None', 'use_experimental_parser': 'False', 'no_print': 'None', 'write_json': 'True', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'profiles_dir': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics', 'log_path': 'C:\\Users\\es00700248\\Desktop\\Personal\\Financial-Analytics-Showcase\\4_Retail_Banking_dbt\\retail_bank_analytics\\logs', 'debug': 'False', 'partial_parse': 'True', 'quiet': 'False', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'printer_width': '80'}
+[0m15:47:05.649097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0627acfd-f587-4644-a2ac-e5e09d1a0483', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149E9D71F30>]}
+[0m15:47:05.709865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0627acfd-f587-4644-a2ac-e5e09d1a0483', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000149E9EAF790>]}
