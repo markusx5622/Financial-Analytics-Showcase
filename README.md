@@ -40,34 +40,18 @@ Este repositorio reúne tres proyectos modulares de **Financial Data Analytics &
 Financial-Analytics-Showcase/
 │
 ├── 1_MandA_Target_Screener/
-│   ├── src/
-│   │   ├── screener.py               # Algoritmo de filtrado y cálculo de múltiplos (EV/EBITDA)
-│   │   └── excel_generator.py        # Generador y formateador de informes ejecutivos en Excel
-│   ├── output/
-│   │   └── MA_Target_Shortlist.xlsx  # Deliverable final maquetado para C-Suite
-│   └── README.md
+│   ├── MA_Screener_Engine.ipynb        # Notebook end-to-end (Extracción, Múltiplos EV/EBITDA y Filtro)
+│   └── Target_Companies_Shortlist.xlsx # Entregable final maquetado en Excel para C-Suite
 │
 ├── 2_Credit_Risk_Model/
-│   ├── src/
-│   │   ├── dataset_generator.py      # Generación sintética realista (5.000 clientes)
-│   │   ├── train_model.py            # Pipeline Scikit-Learn optimizado para Recall
-│   │   └── loan_simulator.py         # Simulador interactivo de originación basado en DTI
-│   ├── models/
-│   │   └── credit_scoring_model.pkl  # Modelo serializado
-│   └── README.md
+│   └── Credit_Scoring_ML.ipynb         # Pipeline Scikit-Learn (Dataset, Matriz de Confusión y Simulador)
 │
 ├── 3_Algo_Trading_Backtester/
-│   ├── src/
-│   │   ├── stochastic_sim.py         # Simulación de precios (Random Walk con deriva)
-│   │   ├── strategy_engine.py        # Estrategia Golden Cross (SMA 50 vs SMA 200)
-│   │   └── performance_analytics.py  # Cálculo de Sharpe Ratio, Max Drawdown y visualización
-│   ├── plots/
-│   │   └── equity_curve.png          # Comparativa Strategy vs Buy & Hold
-│   └── README.md
+│   └── Quant_Trading_Engine.ipynb      # Motor Cuantitativo (Simulación Estocástica, Golden Cross y Sharpe)
 │
-├── requirements.txt                  # Dependencias del entorno global
-├── .gitignore
-└── README.md                         # Documento maestro del repositorio
+├── requirements.txt                    # Dependencias del entorno global
+├── .gitignore                          # Archivos ignorados por Git
+└── README.md                           # Documento maestro del repositorio
 ```
 
 ---
@@ -175,21 +159,19 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-### 4. Ejecutar los proyectos de forma independiente
+### 4. Explorar y ejecutar los Notebooks
+
+Puedes abrir los notebooks directamente en tu IDE (VS Code, Cursor) o iniciar un servidor de Jupyter:
 
 ```bash
-# Proyecto 1: M&A Target Screener
-cd 1_MandA_Target_Screener
-python src/screener.py
-
-# Proyecto 2: Credit Risk Model
-cd ../2_Credit_Risk_Model
-python src/train_model.py
-
-# Proyecto 3: Algo Trading Backtester
-cd ../3_Algo_Trading_Backtester
-python src/strategy_engine.py
+# Iniciar entorno interactivo de Jupyter
+jupyter lab
 ```
+
+**Notebooks disponibles:**
+- 📊 **M&A Screener:** `1_MandA_Target_Screener/MA_Screener_Engine.ipynb`
+- 💳 **Credit Risk Model:** `2_Credit_Risk_Model/Credit_Scoring_ML.ipynb`
+- 📈 **Algo Trading Backtester:** `3_Algo_Trading_Backtester/Quant_Trading_Engine.ipynb`
 
 ---
 
